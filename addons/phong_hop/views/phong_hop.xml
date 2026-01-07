@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="phong_hop_list_view" model="ir.ui.view">
+            <field name="name">Phòng họp</field>
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_phong_hop"/>
+                    <field name="vi_tri"/>
+                    <field name="suc_chua"/>
+                    <field name="mo_ta"/>
+                    <field name="don_vi_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="phong_hop_form_view" model="ir.ui.view">
+            <field name="name">Phòng họp form</field>
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ten_phong_hop"/>
+                            <field name="vi_tri"/>
+                            <field name="suc_chua"/>
+                            <field name="mo_ta"/>
+                            <field name="don_vi_id"/>
+                        </group>
+                        <group>
+                            <field name="dat_phong_list">
+<!--                                <field name="ten_dat_phong"/>-->
+<!--                                <field name="thoi_gian_bat_dau"/>-->
+<!--                                <field name="thoi_gian_ket_thuc"/>-->
+<!--                                <field name="muc_dich"/>-->
+<!--                                <field name="trang_thai"/>-->
+<!--                                <field name="phong_hop_id"/>-->
+<!--                                <field name="nhan_vien_id"/>-->
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_phong_hop" model="ir.actions.act_window">
+            <field name="name">Phòng họp actions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">phong_hop</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

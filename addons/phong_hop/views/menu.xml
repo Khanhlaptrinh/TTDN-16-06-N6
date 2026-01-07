@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem
+                id="phong_hop_menu_root"
+                name="Phòng họp"
+                sequence="0"/>
+
+        <menuitem name="Thông tin phòng họp"
+                  id="phong_hop_menu"
+                  parent="phong_hop_menu_root"
+                  action="action_phong_hop"
+                  sequence="1"
+        />
+        <menuitem name="Thông tin đặt phòng"
+                  id="dat_phong_menu"
+                  parent="phong_hop_menu_root"
+                  action="action_dat_phong"
+                  sequence="2"
+        />
+    </data>
+</odoo>

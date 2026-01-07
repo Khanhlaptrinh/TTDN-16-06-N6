@@ -95,6 +95,9 @@ export class Dropdown extends Component {
             // Add parent click listener to handle toggling
             useEffect(
                 () => {
+                    if (!this.el || !this.el.parentElement) {
+                        return;
+                    }
                     const onClick = (ev) => {
                         if (this.el.contains(ev.target)) {
                             // ignore clicks inside the dropdown
@@ -110,7 +113,9 @@ export class Dropdown extends Component {
                     }
                     this.el.parentElement.addEventListener("click", onClick);
                     return () => {
-                        this.el.parentElement.removeEventListener("click", onClick);
+                        if (this.el && this.el.parentElement) {
+                            this.el.parentElement.removeEventListener("click", onClick);
+                        }
                     };
                 },
                 () => []
@@ -118,13 +123,15 @@ export class Dropdown extends Component {
 
             useEffect(
                 (open) => {
-                    this.el.parentElement.ariaExpanded = open ? "true" : "false";
+                    if (this.el && this.el.parentElement) {
+                        this.el.parentElement.ariaExpanded = open ? "true" : "false";
+                    }
                 },
                 () => [this.state.open]
             );
 
             // Position menu relatively to parent element
-            usePosition(() => this.el.parentElement, positioningOptions);
+            usePosition(() => this.el && this.el.parentElement ? this.el.parentElement : null, positioningOptions);
         } else {
             // Position menu relatively to inner toggler
             const togglerRef = useRef("togglerRef");
@@ -223,13 +230,19 @@ export class Dropdown extends Component {
      * @param {DropdownStateChangedPayload} args
      */
     onDropdownStateChanged(args) {
+        // Check if this component or the emitter component has been destroyed
+        if (!this.el || !args.emitter.el) {
+            return;
+        }
+
         if (this.el.contains(args.emitter.el)) {
             // Do not listen to events emitted by self or children
             return;
         }
 
         // Emitted by direct siblings ?
-        if (args.emitter.el.parentElement === this.el.parentElement) {
+        if (args.emitter.el.parentElement && this.el.parentElement && 
+            args.emitter.el.parentElement === this.el.parentElement) {
             // Sync the group status
             this.state.groupIsOpen = args.newState.groupIsOpen;
 
@@ -269,6 +282,10 @@ export class Dropdown extends Component {
      * @param {MouseEvent} ev
      */
     onWindowClicked(ev) {
+        // Return if component has been destroyed
+        if (!this.el) {
+            return;
+        }
         // Return if already closed
         if (!this.state.open) {
             return;
@@ -280,6 +297,9 @@ export class Dropdown extends Component {
         // Close if we clicked outside the dropdown, or outside the parent
         // element if it is the toggler
         const rootEl = this.props.toggler === "parent" ? this.el.parentElement : this.el;
+        if (!rootEl) {
+            return;
+        }
         const gotClickedInside = rootEl.contains(ev.target);
         if (!gotClickedInside) {
             this.close();

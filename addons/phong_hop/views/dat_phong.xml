@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="dat_phong_list_view" model="ir.ui.view">
+            <field name="name">Danh sách đặt Phòng</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_dat_phong"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="muc_dich"/>
+                    <field name="trang_thai"/>
+                    <field name="phong_hop_id"/>
+                    <field name="nhan_vien_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="phong_hop_form_view" model="ir.ui.view">
+            <field name="name">Đặt phòng form</field>
+            <field name="model">dat_phong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ten_dat_phong"/>
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name="thoi_gian_ket_thuc"/>
+                            <field name="muc_dich"/>
+                            <field name="trang_thai"/>
+                            <field name="phong_hop_id"/>
+                            <field name="nhan_vien_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dat_phong" model="ir.actions.act_window">
+            <field name="name">Đặt phòng actions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dat_phong</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
