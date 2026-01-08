@@ -27,6 +27,7 @@
         'security/ir.model.access.csv',
         'views/tai_san.xml',
         'views/ghi_nhan_danh_gia_tai_san.xml',
+        'views/lich_su_cap_phat.xml',
         'views/bao_tri_sua_chua.xml',
         'views/phan_bo_tai_san.xml',
         'views/quan_ly_rui_ro.xml',

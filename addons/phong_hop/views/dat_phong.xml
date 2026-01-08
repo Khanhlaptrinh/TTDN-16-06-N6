@@ -1,47 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="dat_phong_list_view" model="ir.ui.view">
-            <field name="name">Danh sách đặt Phòng</field>
+
+        <record id="dat_phong_tree_view" model="ir.ui.view">
+            <field name="name">dat.phong.tree</field>
             <field name="model">dat_phong</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree string="Danh sách đặt phòng">
                     <field name="ten_dat_phong"/>
-                    <field name="thoi_gian_bat_dau"/>
-                    <field name="thoi_gian_ket_thuc"/>
-                    <field name="muc_dich"/>
-                    <field name="trang_thai"/>
                     <field name="phong_hop_id"/>
                     <field name="nhan_vien_id"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="trang_thai"/>
                 </tree>
             </field>
         </record>
 
-        <record id="phong_hop_form_view" model="ir.ui.view">
-            <field name="name">Đặt phòng form</field>
+        <record id="dat_phong_form_view" model="ir.ui.view">
+            <field name="name">dat.phong.form</field>
             <field name="model">dat_phong</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Đặt phòng">
                     <sheet>
-                        <group>
-                            <field name="ten_dat_phong"/>
-                            <field name="thoi_gian_bat_dau"/>
-                            <field name="thoi_gian_ket_thuc"/>
-                            <field name="muc_dich"/>
-                            <field name="trang_thai"/>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ten_dat_phong" placeholder="Tiêu đề đặt phòng"/>
+                            </h1>
+                        </div>
+
+                        <group string="Thông tin chung" col="2">
                             <field name="phong_hop_id"/>
                             <field name="nhan_vien_id"/>
+                            <field name="trang_thai" widget="statusbar"/>
                         </group>
+
+                        <!-- THỜI GIAN -->
+                        <group string="Thời gian sử dụng" col="2">
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name="thoi_gian_ket_thuc"/>
+                        </group>
+
+                        <!-- MỤC ĐÍCH -->
+                        <group string="Mục đích cuộc họp">
+                            <field name="muc_dich" nolabel="1"/>
+                        </group>
+
                     </sheet>
                 </form>
             </field>
         </record>
 
         <record id="action_dat_phong" model="ir.actions.act_window">
-            <field name="name">Đặt phòng actions</field>
-            <field name="type">ir.actions.act_window</field>
+            <field name="name">Quản lý đặt phòng</field>
             <field name="res_model">dat_phong</field>
             <field name="view_mode">tree,form</field>
         </record>
+
     </data>
 </odoo>

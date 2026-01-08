@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="phong_hop_list_view" model="ir.ui.view">
-            <field name="name">Phòng họp</field>
+
+        <record id="phong_hop_tree_view" model="ir.ui.view">
+            <field name="name">phong.hop.tree</field>
             <field name="model">phong_hop</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree string="Danh sách phòng họp">
                     <field name="ten_phong_hop"/>
                     <field name="vi_tri"/>
                     <field name="suc_chua"/>
-                    <field name="mo_ta"/>
                     <field name="don_vi_id"/>
                     <field name="thoi_gian_toi_da"/>
                 </tree>
@@ -17,43 +17,70 @@
         </record>
 
         <record id="phong_hop_form_view" model="ir.ui.view">
-            <field name="name">Phòng họp form</field>
+            <field name="name">phong.hop.form</field>
             <field name="model">phong_hop</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Phòng họp">
                     <sheet>
-                        <group>
-                            <field name="ten_phong_hop"/>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ten_phong_hop" placeholder="Tên phòng họp"/>
+                            </h1>
+                        </div>
+
+                        <group string="Thông tin chung" col="2">
                             <field name="vi_tri"/>
-                            <field name="suc_chua"/>
-                            <field name="mo_ta"/>
                             <field name="don_vi_id"/>
+                            <field name="suc_chua"/>
                             <field name="thoi_gian_toi_da"/>
                         </group>
-                        <group>
-                            <field name="dat_phong_list">
-                                <!--                                <field name="ten_dat_phong"/>-->
-                                <!--                                <field name="thoi_gian_bat_dau"/>-->
-                                <!--                                <field name="thoi_gian_ket_thuc"/>-->
-                                <!--                                <field name="muc_dich"/>-->
-                                <!--                                <field name="trang_thai"/>-->
-                                <!--                                <field name="phong_hop_id"/>-->
-                                <!--                                <field name="nhan_vien_id"/>-->
-                            </field>
-                        </group>
-                        <group>
-                            <field name="tai_san_list">
 
-                            </field>
+                        <group string="Mô tả">
+                            <field name="mo_ta" nolabel="1"/>
                         </group>
+
+                        <notebook>
+                            <page string="Lịch đặt phòng">
+                                <field name="dat_phong_list">
+                                    <tree editable="bottom">
+                                        <field name="ten_dat_phong"/>
+                                        <field name="thoi_gian_bat_dau"/>
+                                        <field name="thoi_gian_ket_thuc"/>
+                                        <field name="nhan_vien_id"/>
+                                        <field name="trang_thai"/>
+                                    </tree>
+                                    <form string="Đặt phòng">
+                                        <group col="2">
+                                            <field name="ten_dat_phong"/>
+                                            <field name="nhan_vien_id"/>
+                                            <field name="thoi_gian_bat_dau"/>
+                                            <field name="thoi_gian_ket_thuc"/>
+                                            <field name="muc_dich"/>
+                                            <field name="trang_thai"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <page string="Tài sản trong phòng">
+                                <field name="tai_san_list">
+<!--                                    <tree editable="bottom">-->
+<!--                                        <field name="ten_tai_san"/>-->
+<!--                                        <field name="so_luong"/>-->
+<!--                                        <field name="tinh_trang"/>-->
+<!--                                    </tree>-->
+                                </field>
+                            </page>
+
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
 
         <record id="action_phong_hop" model="ir.actions.act_window">
-            <field name="name">Phòng họp actions</field>
-            <field name="type">ir.actions.act_window</field>
+            <field name="name">Quản lý phòng họp</field>
             <field name="res_model">phong_hop</field>
             <field name="view_mode">tree,form</field>
         </record>

@@ -47,5 +47,11 @@
             sequence="1"
             action="action_thong_ke_tai_san"
         />
+        <menuitem name="Lịch sử cấp phát"
+            id="lich_su_cap_phat_menu"
+            parent="menu_root"
+            sequence="2"
+            action="action_lich_su_cap_phat"
+        />
     </data>
 </odoo>
