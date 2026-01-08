@@ -36,3 +36,9 @@ class TaiSan(models.Model):
     muon_tra = fields.One2many("muon_tra", 
                                         inverse_name="ma_tai_san", 
                                         string="Quản lý mượn trả")
+
+    @api.model
+    def create(self, vals):
+        if not vals.get('ma_tai_san'):
+            vals['ma_tai_san'] = self.env['ir.sequence'].next_by_code('tai_san.seq')
+        return super().create(vals)
