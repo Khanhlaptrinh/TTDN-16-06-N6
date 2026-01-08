@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="lich_su_cap_phat_list_view" model="ir.ui.view">
+            <field name="name">lich.su.cap.phat.tree</field>
+            <field name="model">lich_su_cap_phat</field>
+            <field name="arch" type="xml">
+                <tree string="Lịch sử cấp phát">
+                    <field name="ngay_cap"/>
+                    <field name="ngay_thu_hoi"/>
+                    <field name="tai_san_id"/>
+                    <field name="nhan_vien_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_lich_su_cap_phat_form" model="ir.ui.view">
+            <field name="name">lich.su.cap.phat.form</field>
+            <field name="model">lich_su_cap_phat</field>
+            <field name="arch" type="xml">
+                <form string="Lịch sử cấp phát">
+                    <sheet>
+                        <group>
+                            <field name="tai_san_id"/>
+                            <field name="nhan_vien_id"/>
+                        </group>
+                        <group>
+                            <field name="ngay_cap"/>
+                            <field name="ngay_thu_hoi"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_lich_su_cap_phat" model="ir.actions.act_window">
+            <field name="name">Lịch sử cấp phát</field>
+            <field name="res_model">lich_su_cap_phat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

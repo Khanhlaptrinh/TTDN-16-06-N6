@@ -2,6 +2,7 @@
 
 from . import tai_san
 from . import ghi_nhan_danh_gia_tai_san
+from . import lich_su_cap_phat
 from . import bao_tri_sua_chua
 from . import phan_bo_tai_san
 from . import quan_ly_rui_ro
