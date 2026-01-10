@@ -1,37 +1,47 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="lich_su_cap_phat_list_view" model="ir.ui.view">
+
+        <record id="lich_su_cap_phat_tree_view" model="ir.ui.view">
             <field name="name">lich.su.cap.phat.tree</field>
             <field name="model">lich_su_cap_phat</field>
             <field name="arch" type="xml">
-                <tree string="Lịch sử cấp phát">
-                    <field name="ngay_cap"/>
-                    <field name="ngay_thu_hoi"/>
+                <tree string="Lịch sử cấp phát"
+                      decoration-success="ngay_thu_hoi"
+                      decoration-info="not ngay_thu_hoi">
                     <field name="tai_san_id"/>
                     <field name="nhan_vien_id"/>
+                    <field name="ngay_cap"/>
+                    <field name="ngay_thu_hoi"/>
                 </tree>
             </field>
         </record>
 
-
-        <record id="view_lich_su_cap_phat_form" model="ir.ui.view">
+        <record id="lich_su_cap_phat_form_view" model="ir.ui.view">
             <field name="name">lich.su.cap.phat.form</field>
             <field name="model">lich_su_cap_phat</field>
             <field name="arch" type="xml">
                 <form string="Lịch sử cấp phát">
                     <sheet>
-                        <group>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="tai_san_id" placeholder="Tài sản"/>
+                            </h1>
+                        </div>
+
+                        <group string="Thông tin cấp phát" col="2">
                             <field name="tai_san_id"/>
                             <field name="nhan_vien_id"/>
                         </group>
-                        <group>
+
+                        <group string="Thời gian" col="2">
                             <field name="ngay_cap"/>
                             <field name="ngay_thu_hoi"/>
                         </group>
+
                     </sheet>
                 </form>
-
             </field>
         </record>
 
@@ -40,5 +50,6 @@
             <field name="res_model">lich_su_cap_phat</field>
             <field name="view_mode">tree,form</field>
         </record>
+
     </data>
 </odoo>
