@@ -104,9 +104,7 @@
             <field name="res_model">tai_san</field>
             <field name="view_mode">tree,form,graph</field>
             <field name="search_view_id" ref = "tai_san_search"/>
-
         </record>
-
     </data>
 </odoo>
         
