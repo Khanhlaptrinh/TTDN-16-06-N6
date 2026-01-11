@@ -20,6 +20,9 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
+    # Note: One2many fields (tai_san_ids, dat_phong_ids) are commented out
+    # to avoid circular dependency. They will be available as reverse fields
+    # once other modules are installed.
     'depends': ['base'],
 
     # always loaded

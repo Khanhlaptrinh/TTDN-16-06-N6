@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
+    'name': "tai_san_doanh_nghiep",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        subtitle in modules listing or apps.openerp.com""",
 
     'description': """
         Long description of module's purpose
@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'nhan_su'],
 
     # always loaded
     'data': [

@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 class DatPhong(models.Model):
     _name = 'dat_phong'
@@ -15,7 +16,23 @@ class DatPhong(models.Model):
     ], default='draft')
 
     phong_hop_id = fields.Many2one("phong_hop", string="Phòng họp", required=True)
-    nhan_vien_id = fields.Many2one("nhan_vien", string="Nhân viên đặt phòng", required=True)
+    nhan_vien_id = fields.Many2one("nhan_vien",string="Nhân viên đặt phòng")
+    @api.onchange('nhan_vien_id')
+    def _onchange_nhan_vien_id(self):
+        if self.nhan_vien_id and self.nhan_vien_id.don_vi_id:
+            return {
+                'domain': {
+                    'phong_hop_id': [
+                        ('don_vi_id', '=', self.nhan_vien_id.don_vi_id.id)
+                    ]
+                }
+            }
+        else:
+            return {
+                'domain': {
+                    'phong_hop_id': []
+                }
+            }
 
     @api.constrains('phong_hop_id', 'thoi_gian_bat_dau', 'thoi_gian_ket_thuc')
     def _check_trung_lich(self):

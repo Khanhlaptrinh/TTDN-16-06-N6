@@ -41,15 +41,20 @@
                         </group>
 
                         <notebook>
+
+                            <!-- TAB 1: LỊCH ĐẶT PHÒNG -->
                             <page string="Lịch đặt phòng">
-                                <field name="dat_phong_list">
-                                    <tree editable="bottom">
+                                <field name="dat_phong_list" context="{'default_phong_hop_id': active_id}">
+                                    <tree decoration-danger="trang_thai == 'draft'"
+                                          decoration-success="trang_thai == 'done'"
+                                          decoration-warning="trang_thai == 'confirmed'">
                                         <field name="ten_dat_phong"/>
                                         <field name="thoi_gian_bat_dau"/>
                                         <field name="thoi_gian_ket_thuc"/>
                                         <field name="nhan_vien_id"/>
                                         <field name="trang_thai"/>
                                     </tree>
+
                                     <form string="Đặt phòng">
                                         <group col="2">
                                             <field name="ten_dat_phong"/>
@@ -63,14 +68,11 @@
                                 </field>
                             </page>
 
-                            <page string="Tài sản trong phòng">
-                                <field name="tai_san_list">
-<!--                                    <tree editable="bottom">-->
-<!--                                        <field name="ten_tai_san"/>-->
-<!--                                        <field name="so_luong"/>-->
-<!--                                        <field name="tinh_trang"/>-->
-<!--                                    </tree>-->
-                                </field>
+                            <!-- TAB 2: THIẾT BỊ / TÀI SẢN -->
+                            <page string="Thiết bị trong phòng">
+                                <field name="tai_san_list"
+                                       widget="many2many_tags"
+                                       options="{'no_create': True}"/>
                             </page>
 
                         </notebook>

@@ -7,10 +7,15 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Nhân viên</div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ho_va_ten"/>
+                            </h1>
+                        </div>
+
+                        <!-- THÔNG TIN CÁ NHÂN -->
                         <group col="4" string="Thông tin chung">
                             <field name="nhan_vien_id"/>
-                            <field name="ho_va_ten"/>
                             <field name="ngay_sinh"/>
                             <field name="tuoi"/>
                             <field name="que_quan"/>
@@ -19,21 +24,61 @@
                             <field name="nguoi_xac_nhan"/>
                             <field name="anh" widget="image"/>
                         </group>
+
+                        <!-- THÔNG TIN CÔNG VIỆC -->
                         <group col="4" string="Thông tin công việc">
                             <field name="don_vi_id"/>
                             <field name="chuc_vu_id"/>
                             <field name="phong_ban_id"/>
                             <field name="dang_hoat_dong"/>
                         </group>
+
                         <notebook>
-                            <page string="Danh sach lich su cong tac">
+
+                            <!-- LỊCH SỬ CÔNG TÁC -->
+                            <page string="Lịch sử công tác">
                                 <field name="lich_su_cong_tac"/>
                             </page>
-                        </notebook>
-                        <notebook>
-                            <page string="Danh sach bằng cấp">
+
+                            <!-- BẰNG CẤP -->
+                            <page string="Bằng cấp">
                                 <field name="quan_ly_bang_cap"/>
                             </page>
+
+                            <!-- 🔥 LỊCH ĐẶT PHÒNG -->
+                            <!-- Note: dat_phong_ids field is commented out to avoid circular dependency.
+                                 Uncomment after upgrading all modules, or add via model extension. -->
+                            <!--
+                            <page string="Lịch đặt phòng">
+                                <field name="dat_phong_ids" readonly="1">
+                                    <tree>
+                                        <field name="ten_dat_phong"/>
+                                        <field name="phong_hop_id"/>
+                                        <field name="thoi_gian_bat_dau"/>
+                                        <field name="thoi_gian_ket_thuc"/>
+                                        <field name="trang_thai"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            -->
+
+                            <!-- 🔥 TÀI SẢN -->
+                            <!-- Note: tai_san_ids field is commented out to avoid circular dependency.
+                                 Uncomment after upgrading all modules, or add via model extension. -->
+                            <!--
+                            <page string="Tài sản">
+                                <field name="tai_san_ids">
+                                    <tree editable="bottom">
+                                        <field name="ma_tai_san"/>
+                                        <field name="ten_tai_san"/>
+                                        <field name="loai_tai_san"/>
+                                        <field name="tinh_trang"/>
+                                        <field name="vi_tri"/>
+                                        <field name="gia_tri"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            -->
                         </notebook>
                     </sheet>
                 </form>
@@ -79,7 +124,7 @@
             <field name="name">Nhân viên</field>
             <field name="res_model">nhan_vien</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref = "nhan_vien_search"/>
+            <field name="search_view_id" ref="nhan_vien_search"/>
 
         </record>
 
