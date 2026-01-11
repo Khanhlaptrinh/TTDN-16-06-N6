@@ -21,6 +21,10 @@ class TaiSan(models.Model):
     ], string="Tình trạng")
     vi_tri = fields.Char("Vị trí")
     anh = fields.Binary("Ảnh")
+    nhan_vien_id = fields.Many2one(
+        'nhan_vien',
+        string="Nhân viên quản lý"
+    )
     ghi_nhan_danh_gia_tai_san = fields.One2many("ghi_nhan_danh_gia_tai_san", 
                                         inverse_name="ma_tai_san", 
                                         string="Kiểm kê tài sản")
@@ -36,6 +40,9 @@ class TaiSan(models.Model):
     muon_tra = fields.One2many("muon_tra", 
                                         inverse_name="ma_tai_san", 
                                         string="Quản lý mượn trả")
+    lich_su_cap_phat = fields.One2many("lich_su_cap_phat", 
+                                        inverse_name="tai_san_id", 
+                                        string="Lịch sử cấp phát")
 
     @api.model
     def create(self, vals):

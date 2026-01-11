@@ -43,6 +43,11 @@
                                 <field name="muon_tra"/>
                             </page>
                         </notebook>
+                        <notebook>
+                            <page string="Lịch sử cấp phát">
+                                <field name="lich_su_cap_phat"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -93,7 +98,6 @@
                             <searchpanel>
                                 <field name="tinh_trang" select="multi"/>
                                 <field name="loai_tai_san" select="multi"/>
-                                
                             </searchpanel>
                 </search>
             </field>

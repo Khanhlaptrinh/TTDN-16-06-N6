@@ -6,7 +6,11 @@
             <field name="name">dat.phong.tree</field>
             <field name="model">dat_phong</field>
             <field name="arch" type="xml">
-                <tree string="Danh sách đặt phòng">
+                <tree string="Danh sách đặt phòng"
+                      decoration-danger="trang_thai == 'draft'"
+                      decoration-warning="trang_thai == 'confirmed'"
+                      decoration-success="trang_thai == 'done'">
+
                     <field name="ten_dat_phong"/>
                     <field name="phong_hop_id"/>
                     <field name="nhan_vien_id"/>
@@ -30,10 +34,17 @@
                             </h1>
                         </div>
 
-                        <group string="Thông tin chung" col="2">
-                            <field name="phong_hop_id"/>
+                        <!-- TRẠNG THÁI -->
+                        <group>
+                            <field name="trang_thai"
+                                   widget="statusbar"
+                                   statusbar_visible="draft,confirmed,done"/>
+                        </group>
+
+                        <!-- NGỮ CẢNH ĐIỀU PHỐI -->
+                        <group string="Thông tin điều phối" col="2">
                             <field name="nhan_vien_id"/>
-                            <field name="trang_thai" widget="statusbar"/>
+                            <field name="phong_hop_id"/>
                         </group>
 
                         <!-- THỜI GIAN -->
