@@ -46,37 +46,44 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
   <table>
     <tr>
       <td align="center">
-        <img src="docs/screenshots/homepage.png" alt="Homepage" width="300"><br>
-        <sub>Homepage</sub>
+        <img src="docs/screenshots/giao_dien_quan_ly_phong.png" alt="QuanLyPhong" width="300"><br>
+        <sub>Quản lý phòng</sub>
       </td>
       <td align="center">
-        <img src="docs/screenshots/login.png" alt="Login" width="300"><br>
-        <sub>Login</sub>
+        <img src="docs/screenshots/Quan_ly_phong_hop.png" alt="TaoPhongHop" width="300"><br>
+        <sub>Tạo phòng họp</sub>
       </td>
       <td align="center">
-        <img src="docs/screenshots/user_address.png" alt="Add New Address" width="300"><br>
-        <sub>Add New Address</sub>
+        <img src="docs/screenshots/quan_ly_dat_phong.png" alt="Add New Address" width="300"><br>
+        <sub>Quản lý đặt phòng</sub>
       </td>
       <td align="center">
-        <img src="docs/screenshots/cart.png" alt="Cart" width="300"><br>
-        <sub>Cart</sub>
+        <img src="docs/screenshots/dat_phong.png" alt="Cart" width="300"><br>
+        <sub>Tạo phòng đặt</sub>
       </td>
     </tr>
+  </table>
+</div>
+
+<div align="center">
+  <p><strong>1. Quản lý tài sản</strong></p>
+  <table>
     <tr>
       <td align="center">
-        <img src="uploads/screenshots/dish_detail.png" alt="Dish Detail" width="300"><br>
-        <sub>Dish Detail</sub>
+        <img src="docs/screenshots/giao_dien_quan_ly_tai_san.png" alt="QuanLyTaiSan" width="300"><br>
+        <sub>Quản lý tài sản</sub>
       </td>
       <td align="center">
-        <img src="uploads/screenshots/order.png" alt="Order" width="300"><br>
-        <sub>Order</sub>
+        <img src="docs/screenshots/tao_tai_san.png" alt="TaoTaiSan" width="300"><br>
+        <sub>Tạo tài sản</sub>
       </td>
       <td align="center">
-        <img src="uploads/screenshots/order_history.png" alt="Order History" width="300"><br>
-        <sub>Order</sub>
-      </td><td align="center">
-        <img src="uploads/screenshots/restaurant.png" alt="Restaurant" width="300"><br>
-        <sub>Restaurant</sub>
+        <img src="docs/screenshots/quan_ly_muon_tra.png" alt="QuanLyMuonTra" width="300"><br>
+        <sub>Quản lý mượn trả</sub>
+      </td>
+      <td align="center">
+        <img src="docs/screenshots/lich_su_cap_phat.png" alt="LichSuCapPhat" width="300"><br>
+        <sub>Lịch sử cấp phát</sub>
       </td>
     </tr>
   </table>
