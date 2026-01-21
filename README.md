@@ -42,7 +42,7 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
 
 ## 🚀 3. Hình ảnh các chức năng
 <div align="center">
-  <p><strong>1. Phòng họp</strong></p>
+  <p><strong>1. Quản lý phòng họp</strong></p>
   <table>
     <tr>
       <td align="center">
