@@ -1,4 +1,4 @@
-#!/home/buidu/odoo/venv/bin/python3.10
+#!/home/buidu/odoo/venv/bin/python3
 
 ##############################################################################
 #

@@ -1,4 +1,4 @@
-#!/home/buidu/odoo/venv/bin/python3.10
+#!/home/buidu/odoo/venv/bin/python3
 
 # $Id: rst2odt_prepstyles.py 8346 2019-08-26 12:11:32Z milde $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>
