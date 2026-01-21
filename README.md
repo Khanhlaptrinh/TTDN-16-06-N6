@@ -41,6 +41,46 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
 </div>
 
 ## 🚀 3. Hình ảnh các chức năng
+<div align="center">
+  <p><strong>1. Phòng họp</strong></p>
+  <table>
+    <tr>
+      <td align="center">
+        <img src="docs/screenshots/homepage.png" alt="Homepage" width="300"><br>
+        <sub>Homepage</sub>
+      </td>
+      <td align="center">
+        <img src="docs/screenshots/login.png" alt="Login" width="300"><br>
+        <sub>Login</sub>
+      </td>
+      <td align="center">
+        <img src="docs/screenshots/user_address.png" alt="Add New Address" width="300"><br>
+        <sub>Add New Address</sub>
+      </td>
+      <td align="center">
+        <img src="docs/screenshots/cart.png" alt="Cart" width="300"><br>
+        <sub>Cart</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="uploads/screenshots/dish_detail.png" alt="Dish Detail" width="300"><br>
+        <sub>Dish Detail</sub>
+      </td>
+      <td align="center">
+        <img src="uploads/screenshots/order.png" alt="Order" width="300"><br>
+        <sub>Order</sub>
+      </td>
+      <td align="center">
+        <img src="uploads/screenshots/order_history.png" alt="Order History" width="300"><br>
+        <sub>Order</sub>
+      </td><td align="center">
+        <img src="uploads/screenshots/restaurant.png" alt="Restaurant" width="300"><br>
+        <sub>Restaurant</sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ### 4. Cài đặt công cụ, môi trường và các thư viện cần thiết
 
