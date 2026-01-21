@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="phong_hop_tree_view" model="ir.ui.view">
+            <field name="name">phong.hop.tree</field>
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách phòng họp">
+                    <field name="ten_phong_hop"/>
+                    <field name="vi_tri"/>
+                    <field name="suc_chua"/>
+                    <field name="don_vi_id"/>
+                    <field name="thoi_gian_toi_da"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="phong_hop_form_view" model="ir.ui.view">
+            <field name="name">phong.hop.form</field>
+            <field name="model">phong_hop</field>
+            <field name="arch" type="xml">
+                <form string="Phòng họp">
+                    <sheet>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ten_phong_hop" placeholder="Tên phòng họp"/>
+                            </h1>
+                        </div>
+
+                        <group string="Thông tin chung" col="2">
+                            <field name="vi_tri"/>
+                            <field name="don_vi_id"/>
+                            <field name="suc_chua"/>
+                            <field name="thoi_gian_toi_da"/>
+                        </group>
+
+                        <group string="Mô tả">
+                            <field name="mo_ta" nolabel="1"/>
+                        </group>
+
+                        <notebook>
+
+                            <!-- TAB 1: LỊCH ĐẶT PHÒNG -->
+                            <page string="Lịch đặt phòng">
+                                <field name="dat_phong_list" context="{'default_phong_hop_id': active_id}">
+                                    <tree decoration-danger="trang_thai == 'draft'"
+                                          decoration-success="trang_thai == 'done'"
+                                          decoration-warning="trang_thai == 'confirmed'">
+                                        <field name="ten_dat_phong"/>
+                                        <field name="thoi_gian_bat_dau"/>
+                                        <field name="thoi_gian_ket_thuc"/>
+                                        <field name="nhan_vien_id"/>
+                                        <field name="trang_thai"/>
+                                    </tree>
+
+                                    <form string="Đặt phòng">
+                                        <group col="2">
+                                            <field name="ten_dat_phong"/>
+                                            <field name="nhan_vien_id"/>
+                                            <field name="thoi_gian_bat_dau"/>
+                                            <field name="thoi_gian_ket_thuc"/>
+                                            <field name="muc_dich"/>
+                                            <field name="trang_thai"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <!-- TAB 2: THIẾT BỊ / TÀI SẢN -->
+                            <page string="Thiết bị trong phòng">
+                                <field name="tai_san_list"
+                                       widget="many2many_tags"
+                                       options="{'no_create': True}"/>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_phong_hop" model="ir.actions.act_window">
+            <field name="name">Quản lý phòng họp</field>
+            <field name="res_model">phong_hop</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
