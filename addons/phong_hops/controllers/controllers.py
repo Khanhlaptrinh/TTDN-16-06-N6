@@ -31,7 +31,7 @@ class PhongHopController(http.Controller):
             request.session.db = dbname
 
     # ========== GET - Lấy danh sách phòng họp ==========
-    @http.route('/api/phong_hop/<dbname>', type='http', auth='public', methods=['GET', 'OPTIONS'], csrf=False)
+    @http.route('/api/list_phong_hop/<dbname>', type='http', auth='public', methods=['GET', 'OPTIONS'], csrf=False)
     def list_phong_hop(self, dbname, **kwargs):
         """API lấy danh sách tất cả phòng họp"""
         if request.httprequest.method == 'OPTIONS':
@@ -58,10 +58,14 @@ class PhongHopController(http.Controller):
                     "suc_chua": phong_hop.suc_chua,
                     "mo_ta": phong_hop.mo_ta,
                     "thoi_gian_toi_da": phong_hop.thoi_gian_toi_da,
+                    # tiện cho AI service filter theo đơn vị mà không cần gọi detail
+                    "don_vi_id": phong_hop.don_vi_id.id if phong_hop.don_vi_id else None,
                     "don_vi": {
                         "id": phong_hop.don_vi_id.id if phong_hop.don_vi_id else None,
                         "ten": phong_hop.don_vi_id.ten_don_vi if phong_hop.don_vi_id else None
                     },
+                    # tiện cho AI service chấm điểm theo thiết bị trong phòng
+                    "tai_san_ids": phong_hop.tai_san_list.ids,
                     "so_luong_dat_phong": len(phong_hop.dat_phong_list),
                     "so_luong_tai_san": len(phong_hop.tai_san_list)
                 })
