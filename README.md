@@ -53,14 +53,6 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
         <img src="docs/screenshots/Quan_ly_phong_hop1.png" alt="TaoPhongHop" width="300"><br>
         <sub>Tạo phòng họp</sub>
       </td>
-      <td align="center">
-        <img src="docs/screenshots/quan_ly_dat_phong.png" alt="Add New Address" width="300"><br>
-        <sub>Quản lý đặt phòng</sub>
-      </td>
-      <td align="center">
-        <img src="docs/screenshots/dat_phong.png" alt="Cart" width="300"><br>
-        <sub>Tạo phòng đặt</sub>
-      </td>
     </tr>
   </table>
 </div>
