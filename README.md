@@ -66,7 +66,7 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
 </div>
 
 <div align="center">
-  <p><strong>1. Quản lý tài sản</strong></p>
+  <p><strong>2. Quản lý tài sản</strong></p>
   <table>
     <tr>
       <td align="center">
@@ -83,6 +83,26 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
       </td>
       <td align="center">
         <img src="docs/screenshots/lich_su_cap_phat.png" alt="LichSuCapPhat" width="300"><br>
+        <sub>Lịch sử cấp phát</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div align="center">
+  <p><strong>3. External API</strong></p>
+  <table>
+    <tr>
+      <td align="center">
+        <img src="docs/screenshots/quan_ly_dat_phong1.png" alt="QuanLyTaiSan" width="300"><br>
+        <sub>Quản lý tài sản</sub>
+      </td>
+      <td align="center">
+        <img src="docs/screenshots/quan_ly_tai_san.png" alt="TaoTaiSan" width="300"><br>
+        <sub>Tạo tài sản</sub>
+      </td>
+      <td align="center">
+        <img src="docs/screenshots/quan_ly_phong_hop.png" alt="LichSuCapPhat" width="300"><br>
         <sub>Lịch sử cấp phát</sub>
       </td>
     </tr>
