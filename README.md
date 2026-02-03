@@ -50,7 +50,7 @@ Hệ thống Quản lý tài sản và Phòng họp được xây dựng nhằm 
         <sub>Quản lý phòng</sub>
       </td>
       <td align="center">
-        <img src="docs/screenshots/Quan_ly_phong_hop.png" alt="TaoPhongHop" width="300"><br>
+        <img src="docs/screenshots/Quan_ly_phong_hop1.png" alt="TaoPhongHop" width="300"><br>
         <sub>Tạo phòng họp</sub>
       </td>
       <td align="center">
